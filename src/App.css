@@ -1,0 +1,125 @@
+body {
+  background-color: #222;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.todo-container {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #222;
+}
+
+.header {
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: #353132;
+  border-radius: 12px;
+}
+
+.form:focus-within {
+  outline: 1px solid grey;
+}
+
+.form__input {
+  width: 100%;
+  background-color: #353132;
+  appearance: none;
+  border: 1px solid transparent;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  outline: none;
+}
+
+.form__button {
+  flex: 1;
+  white-space: nowrap;
+  background: #fcba28;
+  color: #231f20;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 12px;
+  text-align: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.form__button:hover {
+  opacity: 0.8;
+}
+
+.todo__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-start: 0px;
+  background: #7b5ea7;
+  padding: 8px 16px;
+  margin: 12px 0px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.todo__check-button {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  padding: 0px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid beige;
+  background: transparent;
+  position: relative;
+}
+
+.todo__check-button--completed {
+  background: #fcba28;
+  border-color: #7b5ea7;
+}
+
+.todo__check-button--completed:after {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
+
+.todo__text {
+  flex-grow: 1; 
+  margin-left: 10px;
+  }
+
+.todo__delete-button {
+  margin-left: 5px;
+  color: white;
+  border: none;
+  border-left: 1px solid white;
+  background: transparent;
+  cursor: pointer;
+}
+
+.todo__delete-button:hover {
+  opacity: 0.8;
+}
