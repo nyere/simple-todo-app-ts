@@ -72,7 +72,14 @@ export default function TaskManager() {
                                 }`}
                                 onClick={() => handleUpdateTaskStatus(task.id)}
                             ></button>
-                            <span className="todo__text">{task.title}</span>
+                            <span
+                                className={`todo__text ${
+                                    task.status === 'completed' &&
+                                    'todo__text--completed'
+                                }`}
+                            >
+                                {task.title}
+                            </span>
                             <button
                                 className="todo__delete-button"
                                 onClick={() => handleDeleteTask(task.id)}

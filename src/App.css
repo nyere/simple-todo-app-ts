@@ -109,7 +109,11 @@ body {
 .todo__text {
   flex-grow: 1; 
   margin-left: 10px;
-  }
+}
+
+.todo__text--completed {
+  text-decoration:line-through;
+}
 
 .todo__delete-button {
   margin-left: 5px;
