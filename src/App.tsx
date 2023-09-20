@@ -4,6 +4,7 @@ import './App.css';
 import reducer from './reducer/reducer';
 import { Task } from './types';
 import createTask from './utils/createTask';
+import ToDoItem from './components/ToDoItem';
 
 // code
 export default function TaskManager() {
@@ -62,32 +63,16 @@ export default function TaskManager() {
 
             <div className="todo">
                 <ul className="todo__list">
-                    {tasks.map((task) => (
-                        <li key={task.id} className="todo__item">
-                            <button
-                                className={`todo__check-button ${
-                                    task.status === 'completed'
-                                        ? 'todo__check-button--completed'
-                                        : 'todo__check-button--pending'
-                                }`}
-                                onClick={() => handleUpdateTaskStatus(task.id)}
-                            ></button>
-                            <span
-                                className={`todo__text ${
-                                    task.status === 'completed' &&
-                                    'todo__text--completed'
-                                }`}
-                            >
-                                {task.title}
-                            </span>
-                            <button
-                                className="todo__delete-button"
-                                onClick={() => handleDeleteTask(task.id)}
-                            >
-                                Delete
-                            </button>
-                        </li>
-                    ))}
+                    {tasks.map((task) => {
+                        return (
+                            <ToDoItem
+                                key={task.id}
+                                task={task}
+                                onUpdateTaskStatus={handleUpdateTaskStatus}
+                                onDeleteTask={handleDeleteTask}
+                            />
+                        );
+                    })}
                 </ul>
             </div>
         </div>
